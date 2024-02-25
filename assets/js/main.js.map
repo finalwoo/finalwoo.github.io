@@ -1,0 +1,1 @@
+{"version":3,"names":[],"mappings":"","sources":["main.js"],"sourcesContent":["import {random} from './util';\n\nconst randomOne = random(10);\nconst randomTwo = random(20);\n\nconsole.log( `${randomOne} ${randomTwo}` );\n"],"file":"main.js"}
