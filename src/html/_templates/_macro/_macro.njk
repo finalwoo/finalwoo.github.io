@@ -1,0 +1,14 @@
+
+{%- macro image( class, src, alt, width="", height="auto" ) -%}
+  <figure class="{{ class }}">
+    <img src="{{ src }}" width="{{ width }}" height="{{ height }}">
+    <figcaption>{{ alt }}</figcaption>
+  </figure>
+{%- endmacro %}
+
+
+<!-- input macro -->
+{% macro input( name, placeholder, type='text' ) %}
+  <input type="{{ type }}" name="{{ name }}" placeholder="{{ placeholder }}">
+{% endmacro %}
+
