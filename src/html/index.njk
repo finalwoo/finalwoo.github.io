@@ -1,0 +1,38 @@
+{%- extends "_templates/_layout.njk" -%}
+{%- import "_templates/_macro/_macro.njk" as macro -%}
+
+  {% include("_templates/_include/_header.njk") %}
+
+{% block content %}
+  <h1>index 페이지 입니다.</h1>
+{%- for data in nav_data %}
+  <a href="{{ data.href }}">{{ data.name }}</a>
+  {%- endfor %}
+
+{% set items = ['안녕하세요', '반갑습니다', '환영합니다'] %}
+{%- for loop_text in items %}
+  <p>{{ loop.index }}. {{ loop_text }}</p>
+{%- endfor %}
+
+
+{%- set datas = [{name:'예원이는', desc:'귀여웡'}, {name:'마루', desc:'도 귀여웡'}] -%}}
+
+{% for data in datas %}
+<div>{{ data.name }} {{ data.desc }}</div>
+{% endfor %}
+
+<!-- input -->
+<form>
+  {{ macro.input( 'email', 'email을 입력해 주세요.' ) }}
+  {{ macro.input( 'password', '비밀번호를 입력해 주세요.', type='password' ) }}
+</form>
+
+<!-- figure -->
+{{ macro.image( "images/intro.png", "안녕하세요. UXKM 입니다.", width="100px" ) }}
+
+
+
+  {{ macro.image( "image_box", "/assets/images/visual.png", "메인 이미지 입니다.", width="400px" ) }}
+{%- endblock %}
+
+
